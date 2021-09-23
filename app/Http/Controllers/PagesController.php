@@ -11,4 +11,10 @@ class PagesController extends Controller
     {
         return view('login');
     }
+
+    // 注册页
+    public function register()
+    {
+        return view('register');
+    }
 }

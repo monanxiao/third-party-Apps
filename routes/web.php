@@ -14,4 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 // 首页
-Route::get('/', 'PagesController@index')->name('home');
+Route::get('/', 'PagesController@index')
+    ->name('home');
+
+Route::get('uregister', 'PagesController@register')
+    ->name('uregister');
+
+// 用户登录
+Auth::routes();
+
