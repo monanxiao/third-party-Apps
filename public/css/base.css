@@ -68,7 +68,9 @@ p+p {
 img {
     border: 0;
     vertical-align: top;
-    display: inline-block
+    display: inline-block;
+    height: 35px;
+    margin-top: 5px;
 }
 
 button,input,optgroup,select,textarea {

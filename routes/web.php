@@ -17,9 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PagesController@index')
     ->name('home');
 
+// 注册界面
 Route::get('uregister', 'PagesController@register')
     ->name('uregister');
 
 // 用户登录
 Auth::routes();
+
+// 用户列表
+Route::get('users', 'UsersController@index')->name('users.index');
 

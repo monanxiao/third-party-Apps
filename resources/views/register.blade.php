@@ -5,22 +5,45 @@
     <section class="aui-content">
       <div class="aui-content-box clearfix">
         <div class="aui-content-box-fl">
-          <h2>专注互联网职业机会</h2>
           <div class="aui-form-content">
             <div class="aui-form-content-item" style="display:block">
-              <form action="javascript:;">
-                <div class="aui-form-list">
-                  <input type="text" class="aui-input" name="email" value="{{ old('email') }}" placeholder="请输入邮箱" data-required="required" autocomplete="off">
-                </div>
-                    <div class="aui-form-list">
-                    <input type="text" class="aui-input" name="" placeholder="请证明你不是机器人" data-required="required" autocomplete="off">
-                    <a href="javascript:;" class="aui-child aui-child-img">
-                        <img src="./images/yzm.png" alt=""></a>
-                    </div>
+              <form method="POST" action="{{ route('register') }}">
+                @csrf
+
 
                 <div class="aui-form-list">
-                  <input type="text" class="aui-input" name="" placeholder="请输入验证码" data-required="required" autocomplete="off">
-                  <input type="button" class="aui-child" value="获取验证码"></div>
+                  <input type="text" class="aui-input" name="email" value="{{ old('email') }}" placeholder="请输入邮箱" data-required="required" autocomplete="off">
+                   @error('email')
+                        <span class="invalid-feedback" style="color:red;" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+
+                <div class="aui-form-list">
+                    <input type="text" class="aui-input" name="captcha" placeholder="请证明你不是机器人" data-required="required" autocomplete="off">
+                    <a href="javascript:;" class="aui-child aui-child-img">
+                        <img src="{{ captcha_src('flat') }}" onclick="this.src='/captcha/flat?'+Math.random()" title="点击图片重新获取验证码">
+                    </a>
+                    @if ($errors->has('captcha'))
+                        <span class="invalid-feedback" style="color:red;" role="alert">
+                            <strong>{{ $errors->first('captcha') }}</strong>
+                        </span>
+                    @endif
+                </div>
+
+                <div class="aui-form-list">
+                  <input type="password" class="aui-input" name="password" placeholder="请输入密码" data-required="required" autocomplete="off">
+                    @error('password')
+                        <span class="invalid-feedback" style="color:red;" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="aui-form-list">
+                  <input type="password" class="aui-input" name="password_confirmation" placeholder="请再次输入密码" data-required="required" autocomplete="off">
+                  {{-- <input type="button" class="aui-child" value="获取验证码"> --}}
+                </div>
                 <div class="aui-form-btn">
                   <input type="submit" class="aui-btn" value="注 册"></div>
                 <div class="aui-form-ty">注册代表你已同意
