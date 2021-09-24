@@ -13,6 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// 微信
+Route::get('weixin', function() {
+    return Socialite::driver('weixin')->redirect();
+});
+
+// 微信Web
+Route::get('weixinweb', function() {
+    return Socialite::driver('weixinweb')->redirect();
+});
+
+// QQ
+Route::get('qq', function() {
+    return Socialite::driver('qq')->redirect();
+});
+
 // 首页
 Route::get('/', 'PagesController@index')
     ->name('home');

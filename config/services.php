@@ -29,5 +29,19 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
-
+    'weixin' => [
+        'client_id' => env('WEIXIN_CLIENT_ID'),
+        'client_secret' => env('WEIXIN_CLIENT_SECRET'),
+        'redirect' => env('WEIXIN_REDIRECT_URI')
+    ],
+    'weixinweb' => [
+        'client_id' => env('WEIXINWEB_CLIENT_ID'),
+        'client_secret' => env('WEIXINWEB_CLIENT_SECRET'),
+        'redirect' => env('WEIXINWEB_REDIRECT_URI')
+    ],
+    'qq' => [
+        'client_id' => env('QQ_CLIENT_ID'),
+        'client_secret' => env('QQ_CLIENT_SECRET'),
+        'redirect' => env('QQ_REDIRECT_URI')
+    ],
 ];
