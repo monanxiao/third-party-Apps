@@ -23,6 +23,22 @@ Route::get('weixinweb', function() {
     return Socialite::driver('weixinweb')->redirect();
 });
 
+// 微信
+Route::get('weixine', function() {
+    return Socialite::driver('wechat_service_account')->redirect();
+});
+
+// 微信web
+Route::get('wechat_web', function() {
+    return Socialite::driver('wechat_web')->redirect();
+});
+
+// github
+Route::get('github', function() {
+    return Socialite::driver('github')->redirect();
+});
+
+
 // QQ
 Route::get('qq', function() {
     return Socialite::driver('qq')->redirect();

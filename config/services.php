@@ -39,9 +39,24 @@ return [
         'client_secret' => env('WEIXINWEB_CLIENT_SECRET'),
         'redirect' => env('WEIXINWEB_REDIRECT_URI')
     ],
+    'wechat_service_account' => [
+        'client_id' => env('WECHATSERVICEACCOUNT_CLIENT_ID'),
+        'client_secret' => env('WECHATSERVICEACCOUNT_CLIENT_SECRET'),
+        'redirect' => env('WECHATSERVICEACCOUNT_REDIRECT_URI')
+    ],
+    'wechat_web' => [
+        'client_id' => env('WECHATWEB_CLIENT_ID'),
+        'client_secret' => env('WECHATWEB_CLIENT_SECRET'),
+        'redirect' => env('WECHATWEB_REDIRECT_URI')
+    ],
     'qq' => [
         'client_id' => env('QQ_CLIENT_ID'),
         'client_secret' => env('QQ_CLIENT_SECRET'),
         'redirect' => env('QQ_REDIRECT_URI')
+    ],
+    'github' => [
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLIENT_SECRET'),
+        'redirect' => env('GITHUB_REDIRECT_URI')
     ],
 ];

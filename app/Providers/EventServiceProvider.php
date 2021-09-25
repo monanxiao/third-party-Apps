@@ -20,10 +20,13 @@ class EventServiceProvider extends ServiceProvider
         ],
         \SocialiteProviders\Manager\SocialiteWasCalled::class => [
         // ... other providers
-        'SocialiteProviders\\Zoho\\ZohoExtendSocialite@handle',
         'SocialiteProviders\\Weixin\\WeixinExtendSocialite@handle',
-        // 'SocialiteProviders\\QQ\\QQExtendSocialite@handle',
-        // 'SocialiteProviders\\WeixinWeb\\WeixinWebExtendSocialite@handle',
+        'SocialiteProviders\\QQ\\QqExtendSocialite@handle',
+        'SocialiteProviders\\WeixinWeb\\WeixinWebExtendSocialite@handle',
+        'SocialiteProviders\\WeChatServiceAccount\\WeChatServiceAccountExtendSocialite@handle',
+        'SocialiteProviders\\WeChatWeb\\WeChatWebExtendSocialite@handle',
+        'SocialiteProviders\\GitHub\\GitHubExtendSocialite@handle'
+
         ],
     ];
 
