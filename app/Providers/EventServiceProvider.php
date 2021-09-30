@@ -25,7 +25,8 @@ class EventServiceProvider extends ServiceProvider
         'SocialiteProviders\\WeixinWeb\\WeixinWebExtendSocialite@handle',
         'SocialiteProviders\\WeChatServiceAccount\\WeChatServiceAccountExtendSocialite@handle',
         'SocialiteProviders\\WeChatWeb\\WeChatWebExtendSocialite@handle',
-        'SocialiteProviders\\GitHub\\GitHubExtendSocialite@handle'
+        'SocialiteProviders\\GitHub\\GitHubExtendSocialite@handle',
+        'SocialiteProviders\\Weibo\\WeiboExtendSocialite@handle',
 
         ],
     ];

@@ -6,7 +6,12 @@
       <div class="aui-content-box clearfix">
         <div class="aui-content-box-fl">
           <div class="aui-form-header">
-            <div class="aui-form-header-item on">密码登录</div>
+            <div class="aui-form-header-item on">
+                @auth
+                {{ Auth::user()->name }}
+                @endauth
+                密码登录
+            </div>
             <div class="aui-form-header-item">验证码登录</div>
             <span class="aui-form-header-san"></span>
           </div>
@@ -51,16 +56,16 @@
             <h3>使用第三方帐号直接登录:</h3>
             <ul class="aui-content-box-text-link clearfix">
               <li>
-                <a href="javascript:;" class="aui-icon-sina" title="使用新浪微博帐号登录"></a>
+                <a href="{{ route('weibo') }}" class="aui-icon-sina" title="使用新浪微博帐号登录"></a>
               </li>
               <li>
-                <a href="javascript:;" class="aui-icon-wechat" title="使用微信帐号登录"></a>
+                <a href="{{ route('weixin') }}" class="aui-icon-wechat" title="使用微信帐号登录"></a>
               </li>
               <li>
-                <a href="javascript:;" class="aui-icon-qq" title="使用腾讯QQ帐号登录"></a>
+                <a href="{{ route('qq') }}" class="aui-icon-qq" title="使用腾讯QQ帐号登录"></a>
               </li>
               <li>
-                <a href="javascript:;" class="aui-icon-baidu" title="使用百度帐号登录"></a>
+                <a href="{{ route('github') }}" class="aui-icon-baidu" title="使用GitHub帐号登录"></a>
               </li>
             </ul>
           </div>
