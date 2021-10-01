@@ -20,6 +20,7 @@ class ChangeUsersToUsersTable extends Migration
             $table->jsonb('qq')->nullable()->comment('QQ 登录');
             $table->jsonb('weixin')->nullable()->comment('weixin 登录');
             $table->jsonb('github')->nullable()->comment('github 登录');
+            $table->jsonb('weibo')->nullable()->comment('weibo 登录');
 
         });
     }
@@ -33,6 +34,7 @@ class ChangeUsersToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
+            $table->dropColumn(['email', 'password', 'type', 'qq', 'weixin', 'github', 'weibo']);
         });
     }
 }

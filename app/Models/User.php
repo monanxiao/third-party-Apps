@@ -25,6 +25,8 @@ class User extends Authenticatable
         'type',
         'weixin',
         'github',
+        'weibo',
+        'phone'
     ];
 
     /**
@@ -34,7 +36,7 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token',
+        'remember_token'
     ];
 
     /**
@@ -45,6 +47,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'qq' => 'json',
+        'weibo' => 'json',
+        'github' => 'json',
+        'weixin' => 'json',
     ];
 
+    // public function getNameAttribute($value)
+    // {
+    //     $name = substr($this->attributes['name'],0,1);
+    //     return $this->name = str_replace($name,'**',$this->attributes['name']);
+    // }
+
+    public function getPhoneAttribute($value)
+    {
+        $phone = substr($this->attributes['phone'],3,4);
+        return $this->phone = str_replace($phone,'****',$this->attributes['phone']);
+    }
 }
